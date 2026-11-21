@@ -1,1 +1,164 @@
-IiIiQXN5bmMgY2xpZW50IGZvciB0aGUgVmlwZWFrIEFJICgxMjN2aXBzLmNvbSkgdmlkZW8gZ2VuZXJhdGlvbiBBUEkuIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgYXN5bmNpbwpmcm9tIHR5cGluZyBpbXBvcnQgT3B0aW9uYWwKCmltcG9ydCBodHRweAoKZnJvbSAudHlwZXMgaW1wb3J0IENyZWRpdEVzdGltYXRlLCBWaWRlb1Rhc2sKCgpjbGFzcyBWaXBlYWtDbGllbnQ6CiAgICAiIiJBc3luYyBIVFRQIGNsaWVudCBmb3IgU2VlZGFuY2UgU3BpY3kgLyBXYW4gTlNGVyB2aWRlbyBnZW5lcmF0aW9uLgoKICAgIFBhcmFtZXRlcnMKICAgIC0tLS0tLS0tLS0KICAgIGJhc2VfdXJsOgogICAgICAgIFRoZSBBUEkgYmFzZSBVUkwgaXNzdWVkIGluIHRoZSBBUEkgQWNjZXNzIHBhZ2UgYWZ0ZXIgc2lnbmluZyBpbiB0bwogICAgICAgIDEyM3ZpcHMuY29tLiBUaGlzIHBhY2thZ2Ugc2hpcHMgbm8gaGFyZC1jb2RlZCBlbmRwb2ludCBzbyB0aGUgb2ZmaWNpYWwKICAgICAgICBjb250cmFjdCBzdGF5cyB0aGUgc2luZ2xlIHNvdXJjZSBvZiB0cnV0aC4KICAgIGFwaV9rZXk6CiAgICAgICAgQmVhcmVyIHRva2VuIGlzc3VlZCBieSB0aGUgQVBJIEFjY2VzcyBwYWdlLgogICAgIiIiCgogICAgZGVmIF9faW5pdF9fKHNlbGYsIGJhc2VfdXJsOiBzdHIsIGFwaV9rZXk6IHN0ciwgdGltZW91dDogZmxvYXQgPSA2MC4wKSAtPiBOb25lOgogICAgICAgIHNlbGYuX2Jhc2UgPSBiYXNlX3VybC5yc3RyaXAoIi8iKQogICAgICAgIHNlbGYuX2hlYWRlcnMgPSB7IkF1dGhvcml6YXRpb24iOiBmIkJlYXJlciB7YXBpX2tleX0ifQogICAgICAgIHNlbGYuX2NsaWVudCA9IGh0dHB4LkFzeW5jQ2xpZW50KHRpbWVvdXQ9dGltZW91dCkKCiAgICBhc3luYyBkZWYgX19hZW50ZXJfXyhzZWxmKSAtPiAiVmlwZWFrQ2xpZW50IjoKICAgICAgICByZXR1cm4gc2VsZgoKICAgIGFzeW5jIGRlZiBfX2FleGl0X18oc2VsZiwgKmV4YykgLT4gTm9uZToKICAgICAgICBhd2FpdCBzZWxmLmFjbG9zZSgpCgogICAgYXN5bmMgZGVmIGFjbG9zZShzZWxmKSAtPiBOb25lOgogICAgICAgIGF3YWl0IHNlbGYuX2NsaWVudC5hY2xvc2UoKQoKICAgIGFzeW5jIGRlZiBfcG9zdChzZWxmLCBwYXRoOiBzdHIsIHBheWxvYWQ6IGRpY3QpIC0+IGRpY3Q6CiAgICAgICAgciA9IGF3YWl0IHNlbGYuX2NsaWVudC5wb3N0KGYie3NlbGYuX2Jhc2V9e3BhdGh9IiwganNvbj1wYXlsb2FkLCBoZWFkZXJzPXNlbGYuX2hlYWRlcnMpCiAgICAgICAgci5yYWlzZV9mb3Jfc3RhdHVzKCkKICAgICAgICByZXR1cm4gci5qc29uKCkKCiAgICBhc3luYyBkZWYgX2dldChzZWxmLCBwYXRoOiBzdHIpIC0+IGRpY3Q6CiAgICAgICAgciA9IGF3YWl0IHNlbGYuX2NsaWVudC5nZXQoZiJ7c2VsZi5fYmFzZX17cGF0aH0iLCBoZWFkZXJzPXNlbGYuX2hlYWRlcnMpCiAgICAgICAgci5yYWlzZV9mb3Jfc3RhdHVzKCkKICAgICAgICByZXR1cm4gci5qc29uKCkKCiAgICBhc3luYyBkZWYgZXN0aW1hdGUoc2VsZiwgbW9kZWw6IHN0ciwgKipwYXJhbXMpIC0+IENyZWRpdEVzdGltYXRlOgogICAgICAgICIiIlJldHVybiB0aGUgY3JlZGl0IGNvc3QgZm9yIGEgZ2VuZXJhdGlvbiBiZWZvcmUgc3VibWl0dGluZy4KCiAgICAgICAgVGhlIGV4YWN0IHBheWxvYWQgc2hhcGUgZm9sbG93cyB0aGUgb2ZmaWNpYWwgQVBJIEFjY2VzcyBkb2NzOyBwYXNzIHRoZQogICAgICAgIG1vZGVsIGlkIGFuZCBwYXJhbWV0ZXJzIHZlcmJhdGltIGFzIGtleXdvcmQgYXJndW1lbnRzLgogICAgICAgICIiIgogICAgICAgIGRhdGEgPSBhd2FpdCBzZWxmLl9wb3N0KCIvZXN0aW1hdGUiLCB7Im1vZGVsIjogbW9kZWwsICoqcGFyYW1zfSkKICAgICAgICByZXR1cm4gQ3JlZGl0RXN0aW1hdGUoY3JlZGl0cz1pbnQoZGF0YS5nZXQoImNyZWRpdHMiLCAwKSkpCgogICAgYXN5bmMgZGVmIHRleHRfdG9fdmlkZW8oCiAgICAgICAgc2VsZiwKICAgICAgICBtb2RlbDogc3RyLAogICAgICAgIHByb21wdDogc3RyLAogICAgICAgIHJlc29sdXRpb246IHN0ciA9ICI3MjBwIiwKICAgICAgICBkdXJhdGlvbjogZmxvYXQgPSA1LjAsCiAgICAgICAgKipwYXJhbXMsCiAgICApIC0+IFZpZGVvVGFzazoKICAgICAgICAiIiJDcmVhdGUgYSB0ZXh0LXRvLXZpZGVvIHRhc2sgKGFzeW5jKS4iIiIKICAgICAgICBwYXlsb2FkID0geyJtb2RlbCI6IG1vZGVsLCAicHJvbXB0IjogcHJvbXB0LAogICAgICAgICAgICAgICAgICAgInJlc29sdXRpb24iOiByZXNvbHV0aW9uLCAiZHVyYXRpb24iOiBkdXJhdGlvbiwgKipwYXJhbXN9CiAgICAgICAgZGF0YSA9IGF3YWl0IHNlbGYuX3Bvc3QoIi92aWRlby90ZXh0LXRvLXZpZGVvIiwgcGF5bG9hZCkKICAgICAgICByZXR1cm4gVmlkZW9UYXNrKHRhc2tfaWQ9ZGF0YVsidGFza19pZCJdLCBzdGF0dXM9ZGF0YS5nZXQoInN0YXR1cyIsICJxdWV1ZWQiKSwgcmF3PWRhdGEpCgogICAgYXN5bmMgZGVmIGltYWdlX3RvX3ZpZGVvKAogICAgICAgIHNlbGYsCiAgICAgICAgbW9kZWw6IHN0ciwKICAgICAgICBpbWFnZV91cmw6IHN0ciwKICAgICAgICBwcm9tcHQ6IE9wdGlvbmFsW3N0cl0gPSBOb25lLAogICAgICAgICoqcGFyYW1zLAogICAgKSAtPiBWaWRlb1Rhc2s6CiAgICAgICAgIiIiQ3JlYXRlIGFuIGltYWdlLXRvLXZpZGVvIHRhc2sgKGFzeW5jKS4iIiIKICAgICAgICBwYXlsb2FkID0geyJtb2RlbCI6IG1vZGVsLCAiaW1hZ2VfdXJsIjogaW1hZ2VfdXJsLCAqKnBhcmFtc30KICAgICAgICBpZiBwcm9tcHQ6CiAgICAgICAgICAgIHBheWxvYWRbInByb21wdCJdID0gcHJvbXB0CiAgICAgICAgZGF0YSA9IGF3YWl0IHNlbGYuX3Bvc3QoIi92aWRlby9pbWFnZS10by12aWRlbyIsIHBheWxvYWQpCiAgICAgICAgcmV0dXJuIFZpZGVvVGFzayh0YXNrX2lkPWRhdGFbInRhc2tfaWQiXSwgc3RhdHVzPWRhdGEuZ2V0KCJzdGF0dXMiLCAicXVldWVkIiksIHJhdz1kYXRhKQoKICAgIGFzeW5jIGRlZiBnZXRfdGFzayhzZWxmLCB0YXNrX2lkOiBzdHIpIC0+IFZpZGVvVGFzazoKICAgICAgICAiIiJQb2xsIGEgdGFzaydzIHN0YXR1cyBhbmQgcmVzdWx0LiIiIgogICAgICAgIGRhdGEgPSBhd2FpdCBzZWxmLl9nZXQoZiIvdmlkZW8vdGFza3Mve3Rhc2tfaWR9IikKICAgICAgICByZXR1cm4gVmlkZW9UYXNrKAogICAgICAgICAgICB0YXNrX2lkPWRhdGFbInRhc2tfaWQiXSwKICAgICAgICAgICAgc3RhdHVzPWRhdGEuZ2V0KCJzdGF0dXMiLCAicHJvY2Vzc2luZyIpLAogICAgICAgICAgICBtb2RlbD1kYXRhLmdldCgibW9kZWwiLCAiIiksCiAgICAgICAgICAgIHJlc29sdXRpb249ZGF0YS5nZXQoInJlc29sdXRpb24iLCAiIiksCiAgICAgICAgICAgIGR1cmF0aW9uPWZsb2F0KGRhdGEuZ2V0KCJkdXJhdGlvbiIsIDAuMCkpLAogICAgICAgICAgICByZXN1bHRfdXJsPWRhdGEuZ2V0KCJyZXN1bHRfdXJsIiksCiAgICAgICAgICAgIGVycm9yPWRhdGEuZ2V0KCJlcnJvciIpLAogICAgICAgICAgICByYXc9ZGF0YSwKICAgICAgICApCgogICAgYXN5bmMgZGVmIHdhaXRfZm9yKHNlbGYsIHRhc2tfaWQ6IHN0ciwgcG9sbF9pbnRlcnZhbDogZmxvYXQgPSAzLjAsIHRpbWVvdXQ6IGZsb2F0ID0gMzAwLjApIC0+IFZpZGVvVGFzazoKICAgICAgICAiIiJCbG9jayB1bnRpbCBhIHRhc2sgZmluaXNoZXMgKHN1Y2NlZWRlZC9mYWlsZWQpLCBwb2xsaW5nIHBlcmlvZGljYWxseS4iIiIKICAgICAgICBsb29wID0gYXN5bmNpby5nZXRfZXZlbnRfbG9vcCgpCiAgICAgICAgZGVhZGxpbmUgPSBsb29wLnRpbWUoKSArIHRpbWVvdXQKICAgICAgICB3aGlsZSBUcnVlOgogICAgICAgICAgICB0YXNrID0gYXdhaXQgc2VsZi5nZXRfdGFzayh0YXNrX2lkKQogICAgICAgICAgICBpZiB0YXNrLmRvbmU6CiAgICAgICAgICAgICAgICByZXR1cm4gdGFzawogICAgICAgICAgICBpZiBsb29wLnRpbWUoKSA+IGRlYWRsaW5lOgogICAgICAgICAgICAgICAgcmFpc2UgVGltZW91dEVycm9yKGYidGFzayB7dGFza19pZH0gZGlkIG5vdCBmaW5pc2ggd2l0aGluIHt0aW1lb3V0fXMiKQogICAgICAgICAgICBhd2FpdCBhc3luY2lvLnNsZWVwKHBvbGxfaW50ZXJ2YWwpCgogICAgZGVmIHBhcnNlX3dlYmhvb2soc2VsZiwgcGF5bG9hZDogZGljdCkgLT4gVmlkZW9UYXNrOgogICAgICAgICIiIlBhcnNlIGEgd2ViaG9vayBjYWxsYmFjayBib2R5IGludG8gYSBWaWRlb1Rhc2suCgogICAgICAgIEJpbmQgdGhpcyB0byB0aGUgY2FsbGJhY2sgVVJMIHlvdSByZWdpc3RlciBpbiB0aGUgQVBJIEFjY2VzcyBwYWdlIHNvCiAgICAgICAgY29tcGxldGVkIHRhc2tzIGFyZSBwdXNoZWQgaW5zdGVhZCBvZiBwb2xsZWQuCiAgICAgICAgIiIiCiAgICAgICAgZGF0YSA9IHBheWxvYWQuZ2V0KCJkYXRhIiwgcGF5bG9hZCkKICAgICAgICByZXR1cm4gVmlkZW9UYXNrKAogICAgICAgICAgICB0YXNrX2lkPWRhdGFbInRhc2tfaWQiXSwKICAgICAgICAgICAgc3RhdHVzPWRhdGEuZ2V0KCJzdGF0dXMiLCAic3VjY2VlZGVkIiksCiAgICAgICAgICAgIG1vZGVsPWRhdGEuZ2V0KCJtb2RlbCIsICIiKSwKICAgICAgICAgICAgcmVzdWx0X3VybD1kYXRhLmdldCgicmVzdWx0X3VybCIpLAogICAgICAgICAgICBlcnJvcj1kYXRhLmdldCgiZXJyb3IiKSwKICAgICAgICAgICAgcmF3PWRhdGEsCiAgICAgICAgKQo=
+"""Async client for the Vipeak AI (123vip.fans / 123vips.com) video generation API.
+
+Wraps the real API surface documented at https://123vip.fans/docs/api.md:
+
+- Advanced generation:  POST /api/advanced/generate -> taskId
+                         GET  /api/generation-records/<taskId>
+- V3 (BytePlus-style):   POST /api/v3/contents/generations/tasks
+                         GET  /api/v3/contents/generations/tasks/<taskId>
+- Image generation:      POST /api/v3/images/generations
+- Image edit:            POST /api/wan27/image-edit
+- Reusable media:        POST /api/user-assets
+- Model catalog:         GET  /api/models
+
+Billing: 1 USD = 100 credits. Advanced generation is charged per public rates.
+"""
+
+from __future__ import annotations
+
+import asyncio
+from typing import Any, Optional
+
+import httpx
+
+DEFAULT_BASE_URL = "https://123vip.fans"
+
+
+class VipeakClient:
+    """Async HTTP client for Vipeak AI video generation.
+
+    Parameters
+    ----------
+    base_url:
+        API base URL. Defaults to https://123vip.fans.
+    api_key:
+        Bearer token issued in the API Access package.
+    """
+
+    def __init__(self, base_url: str = DEFAULT_BASE_URL, api_key: str = "", timeout: float = 120.0) -> None:
+        self._base = base_url.rstrip("/")
+        self._headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
+        self._client = httpx.AsyncClient(timeout=timeout)
+
+    async def __aenter__(self) -> "VipeakClient":
+        return self
+
+    async def __aexit__(self, *exc) -> None:
+        await self.aclose()
+
+    async def aclose(self) -> None:
+        await self._client.aclose()
+
+    async def _post(self, path: str, payload: dict) -> dict:
+        r = await self._client.post(f"{self._base}{path}", json=payload, headers=self._headers)
+        r.raise_for_status()
+        return r.json()
+
+    async def _get(self, path: str) -> dict:
+        r = await self._client.get(f"{self._base}{path}", headers=self._headers)
+        r.raise_for_status()
+        return r.json()
+
+    # ---- catalog ----
+
+    async def list_models(self) -> dict:
+        """Return the machine-readable model catalog (GET /api/models)."""
+        return await self._get("/api/models")
+
+    # ---- reusable media ----
+
+    async def upload_asset(self, **fields) -> dict:
+        """Upload a reusable image/video/audio asset (POST /api/user-assets).
+
+        Accepts url/imageUrl/videoUrl/audioUrl, dataUrl, name/fileName,
+        durationSeconds, and provider. Returns the asset record including its id.
+        """
+        return await self._post("/api/user-assets", fields)
+
+    # ---- advanced generation (Seedance / Wan / Vega) ----
+
+    async def advanced_generate(self, **params) -> dict:
+        """Create an advanced video task (POST /api/advanced/generate).
+
+        Supply provider and videoCapability (or functionMode/mediaMode) plus
+        prompt, references, ratio, resolution, duration, generateAudio, etc.
+        Returns the raw create response, which carries the task id.
+        """
+        return await self._post("/api/advanced/generate", params)
+
+    async def get_generation_record(self, task_id: str) -> dict:
+        """Poll an advanced task's record (GET /api/generation-records/<taskId>)."""
+        return await self._get(f"/api/generation-records/{task_id}")
+
+    # ---- V3 (BytePlus-style) ----
+
+    async def v3_create_task(self, payload: dict) -> dict:
+        """Create a V3 task (POST /api/v3/contents/generations/tasks)."""
+        return await self._post("/api/v3/contents/generations/tasks", payload)
+
+    async def v3_get_task(self, task_id: str) -> dict:
+        """Poll a V3 task (GET /api/v3/contents/generations/tasks/<taskId>)."""
+        return await self._get(f"/api/v3/contents/generations/tasks/{task_id}")
+
+    # ---- images ----
+
+    async def create_image(self, payload: dict) -> dict:
+        """Create an image task (POST /api/v3/images/generations)."""
+        return await self._post("/api/v3/images/generations", payload)
+
+    async def image_edit(self, payload: dict) -> dict:
+        """Create an image-edit task (POST /api/wan27/image-edit)."""
+        return await self._post("/api/wan27/image-edit", payload)
+
+    # ---- high-level helpers ----
+
+    async def text_to_video(
+        self,
+        provider: str = "seedance-nsfw",
+        prompt: str = "",
+        video_capability: Optional[str] = None,
+        **params,
+    ) -> dict:
+        """Create a video task and return the raw create response (carries task id).
+
+        For advanced providers (wan30 / seedance25 / seedance-nsfw / *-vega),
+        pass `provider` and optional `videoCapability`; everything else is
+        forwarded as request fields.
+        """
+        payload: dict[str, Any] = {"provider": provider}
+        if video_capability:
+            payload["videoCapability"] = video_capability
+        if prompt:
+            payload["prompt"] = prompt
+        payload.update(params)
+        return await self.advanced_generate(**payload)
+
+    async def wait_for(
+        self,
+        task_id: str,
+        poll_interval: float = 5.0,
+        timeout: float = 600.0,
+        poll_fn: str = "advanced",
+    ) -> dict:
+        """Poll until a task reaches a terminal status.
+
+        poll_fn: "advanced" polls /api/generation-records/<id>, "v3" polls
+        /api/v3/contents/generations/tasks/<id>.
+        """
+        loop = asyncio.get_event_loop()
+        deadline = loop.time() + timeout
+        while True:
+            if poll_fn == "v3":
+                rec = await self.v3_get_task(task_id)
+            else:
+                rec = await self.get_generation_record(task_id)
+            status = rec.get("status", rec.get("data", {}).get("status", ""))
+            if status in ("succeeded", "failed", "completed", "error"):
+                return rec
+            if loop.time() > deadline:
+                raise TimeoutError(f"task {task_id} did not finish within {timeout}s")
+            await asyncio.sleep(poll_interval)
+
+    def parse_webhook(self, payload: dict) -> dict:
+        """Parse a webhook callback body into a dict (data unwrapped)."""
+        return payload.get("data", payload)
