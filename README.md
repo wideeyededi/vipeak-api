@@ -52,7 +52,7 @@ vipeak-mcp
 ```
 
 Tools: `estimate_credits`, `text_to_video`, `image_to_video`, `get_task`,
-`wait_for_video`. See `MCP_配置说明.md` for Claude Desktop config.
+`wait_for_video`. See `MCP_SETUP.md` for Claude Desktop config.
 
 ## License
 
