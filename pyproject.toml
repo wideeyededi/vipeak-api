@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "vipeak-api"
-version = "0.1.0"
-description = "Async client for the Vipeak AI (123vips.com) Seedance Spicy & Wan NSFW video generation API"
+version = "0.2.0"
+description = "Async client and MCP server for the Vipeak AI (123vip.fans / 123vips.com) Seedance Spicy & Wan NSFW video generation API"
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
@@ -34,7 +34,7 @@ dependencies = ["httpx>=0.24"]
 
 [project.urls]
 Homepage = "https://123vips.com/"
-Documentation = "https://github.com/wideeyededi/uncensored-nsfw-ai-video-api"
+Documentation = "https://123vip.fans/docs/api.md"
 Repository = "https://github.com/wideeyededi/vipeak-api"
 
 [project.scripts]
