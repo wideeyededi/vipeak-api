@@ -1,1 +1,13 @@
-IiIiVmlwZWFrIEFJIEFQSSBjbGllbnQg4oCUIFNlZWRhbmNlIFNwaWN5ICYgV2FuIE5TRlcgdmlkZW8gZ2VuZXJhdGlvbi4KCkEgbWluaW1hbCBhc3luYyBjbGllbnQgZm9yIHRoZSAxOCsgQUkgdmlkZW8gZ2VuZXJhdGlvbiBBUEkgYXQgMTIzdmlwcy5jb20KKFZpcGVhayBBSSkuIE9mZmljaWFsIGVuZHBvaW50cywgcGFyYW1ldGVycywgY29uY3VycmVuY3kgbGltaXRzIGFuZCBjcmVkaXQKcHJpY2luZyBhcmUgaXNzdWVkIGluc2lkZSB0aGUgQVBJIEFjY2VzcyBwYWdlIGFmdGVyIHNpZ25pbmcgaW47IHRoaXMgcGFja2FnZQpwcm92aWRlcyB0aGUgY2xpZW50IHNoZWxsLCB0YXNrIHBvbGxpbmcgYW5kIHdlYmhvb2sgaGFuZGxpbmcgc28geW91IG9ubHkgd2lyZQppbiB0aGUgZG9jdW1lbnRlZCBiYXNlIFVSTCBhbmQgY3JlZGVudGlhbHMuCiIiIgoKZnJvbSAuY2xpZW50IGltcG9ydCBWaXBlYWtDbGllbnQKZnJvbSAudHlwZXMgaW1wb3J0IFZpZGVvVGFzaywgQ3JlZGl0RXN0aW1hdGUKCl9fdmVyc2lvbl9fID0gIjAuMS4wIgpfX2FsbF9fID0gWyJWaXBlYWtDbGllbnQiLCAiVmlkZW9UYXNrIiwgIkNyZWRpdEVzdGltYXRlIl0K
+"""Vipeak AI API client — Seedance Spicy & Wan NSFW video generation.
+
+Async client for the 18+ AI video generation API at 123vip.fans (Vipeak AI).
+Wraps the real endpoints: advanced generation, V3 tasks, image generation,
+image edit, reusable media, and the model catalog.
+
+Docs: https://123vip.fans/docs/api.md
+"""
+
+from .client import VipeakClient, DEFAULT_BASE_URL
+
+__version__ = "0.2.0"
+__all__ = ["VipeakClient", "DEFAULT_BASE_URL"]
