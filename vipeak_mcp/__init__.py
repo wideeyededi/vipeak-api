@@ -1,11 +1,11 @@
-"""Vipeak AI MCP server — expose Seedance Spicy / Wan NSFW video generation to AI agents.
+"""Vipeak AI MCP server — expose Seedance / Wan / Vega video generation to AI agents.
 
-A minimal Model Context Protocol (MCP) server that lets Claude, Cursor, Codex
-and other MCP clients generate 18+ text-to-video / image-to-video tasks through
-the Vipeak AI (123vips.com) API.
+A Model Context Protocol (MCP) server that lets Claude, Cursor, Codex and other
+MCP clients generate 18+ text-to-video / image-to-video tasks through the
+Vipeak AI API (123vip.fans / 123vips.com).
 
-The server wraps `vipeak_api.VipeakClient`. Base URL and credentials come from
-environment variables; all tool endpoints mirror the official API Access docs.
+Wraps `vipeak_api.VipeakClient`. Credentials come from environment variables;
+all tools map to the real endpoints documented at https://123vip.fans/docs/api.md.
 """
 
 from __future__ import annotations
@@ -13,7 +13,7 @@ from __future__ import annotations
 import json
 import os
 
-from vipeak_api import VipeakClient
+from vipeak_api import VipeakClient, DEFAULT_BASE_URL
 
 __all__ = ["make_client", "TOOLS", "handle_call"]
 
@@ -21,87 +21,105 @@ __all__ = ["make_client", "TOOLS", "handle_call"]
 def make_client() -> VipeakClient:
     """Build a client from environment variables.
 
-    VIPEAK_BASE_URL — API base URL issued in the API Access page (required)
-    VIPEAK_API_KEY  — Bearer token issued in the API Access page (required)
+    VIPEAK_BASE_URL — API base URL (optional, defaults to https://123vip.fans)
+    VIPEAK_API_KEY  — Bearer token issued in the API Access package (required)
     """
-    base = os.environ.get("VIPEAK_BASE_URL")
-    key = os.environ.get("VIPEAK_API_KEY")
-    if not base or not key:
+    base = os.environ.get("VIPEAK_BASE_URL", DEFAULT_BASE_URL)
+    key = os.environ.get("VIPEAK_API_KEY", "")
+    if not key:
         raise RuntimeError(
-            "VIPEAK_BASE_URL and VIPEAK_API_KEY must be set. "
-            "Get them from the API Access page after signing in to 123vips.com."
+            "VIPEAK_API_KEY must be set. Get it from the Vipeak AI API Access package."
         )
     return VipeakClient(base_url=base, api_key=key)
 
 
-# JSON Schema for each tool. Keep field names aligned with the official API.
+# JSON Schema for each tool, aligned with the real API fields.
 TOOLS = [
     {
-        "name": "estimate_credits",
-        "description": "Estimate the credit cost of a video generation before submitting. Returns the credit amount so the user can confirm the price.",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "model": {"type": "string", "description": "Model id, e.g. seedance-spicy or wan-nsfw"},
-                "duration": {"type": "number", "description": "Clip duration in seconds"},
-                "resolution": {"type": "string", "description": "e.g. 480p, 720p, 1080p"},
-            },
-            "required": ["model"],
-        },
+        "name": "list_models",
+        "description": "Return the machine-readable model catalog (GET /api/models).",
+        "inputSchema": {"type": "object", "properties": {}},
     },
     {
         "name": "text_to_video",
-        "description": "Create an async text-to-video task. Returns a task id; poll or use a webhook to fetch the result.",
+        "description": (
+            "Create an async video task. Provide a provider (e.g. seedance-nsfw, "
+            "seedance25, wan30, seedance25-vega, h3-vega, vega10-lite) plus prompt, "
+            "ratio, resolution, duration and generateAudio. Returns the task id."
+        ),
         "inputSchema": {
             "type": "object",
             "properties": {
-                "model": {"type": "string", "description": "Model id, e.g. seedance-spicy or wan-nsfw"},
-                "prompt": {"type": "string", "description": "Text prompt describing the clip"},
-                "duration": {"type": "number"},
+                "provider": {"type": "string", "description": "provider id, e.g. seedance-nsfw or wan30"},
+                "videoCapability": {"type": "string", "description": "optional Mulerouter node for wan30, e.g. w3.0-video-pro"},
+                "prompt": {"type": "string"},
+                "ratio": {"type": "string"},
                 "resolution": {"type": "string"},
+                "duration": {"type": "integer"},
+                "generateAudio": {"type": "boolean"},
             },
-            "required": ["model", "prompt"],
+            "required": ["provider", "prompt"],
         },
     },
     {
         "name": "image_to_video",
-        "description": "Create an async image-to-video task from a first-frame image URL.",
+        "description": (
+            "Create an async image-to-video task. Provide a provider and reference "
+            "images (referenceImages: list of assetId / url objects), prompt, ratio, "
+            "resolution and duration. Returns the task id."
+        ),
         "inputSchema": {
             "type": "object",
             "properties": {
-                "model": {"type": "string"},
-                "image_url": {"type": "string", "description": "URL of the first-frame image"},
+                "provider": {"type": "string"},
                 "prompt": {"type": "string"},
+                "referenceImages": {"type": "array", "items": {"type": "object"}},
+                "referenceVideos": {"type": "array", "items": {"type": "object"}},
+                "ratio": {"type": "string"},
+                "resolution": {"type": "string"},
+                "duration": {"type": "integer"},
             },
-            "required": ["model", "image_url"],
+            "required": ["provider"],
         },
     },
     {
         "name": "get_task",
-        "description": "Fetch a task's status and result URL by task id.",
+        "description": "Poll an advanced task's generation record by task id (GET /api/generation-records/<taskId>).",
         "inputSchema": {
             "type": "object",
-            "properties": {
-                "task_id": {"type": "string"},
-            },
+            "properties": {"task_id": {"type": "string"}},
             "required": ["task_id"],
         },
     },
     {
         "name": "wait_for_video",
-        "description": "Create a task and block until it finishes (succeeds or fails), then return the result URL.",
+        "description": "Create a video task and block until it finishes, then return the result URL.",
         "inputSchema": {
             "type": "object",
             "properties": {
-                "mode": {"type": "string", "enum": ["text-to-video", "image-to-video"]},
+                "provider": {"type": "string"},
+                "prompt": {"type": "string"},
+                "referenceImages": {"type": "array", "items": {"type": "object"}},
+                "ratio": {"type": "string"},
+                "resolution": {"type": "string"},
+                "duration": {"type": "integer"},
+                "timeout": {"type": "number", "description": "Max wait seconds (default 600)"},
+            },
+            "required": ["provider", "prompt"],
+        },
+    },
+    {
+        "name": "create_image",
+        "description": "Create an image generation task (POST /api/v3/images/generations). model in {seedream-5.0-pro, qwen-image-3.0-pro, qwen-image-3.0}.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
                 "model": {"type": "string"},
                 "prompt": {"type": "string"},
-                "image_url": {"type": "string"},
-                "duration": {"type": "number"},
-                "resolution": {"type": "string"},
-                "timeout": {"type": "number", "description": "Max wait seconds (default 300)"},
+                "size": {"type": "string"},
+                "n": {"type": "integer"},
             },
-            "required": ["mode", "model"],
+            "required": ["model", "prompt"],
         },
     },
 ]
@@ -109,64 +127,55 @@ TOOLS = [
 
 async def handle_call(client: VipeakClient, name: str, args: dict) -> dict:
     """Dispatch an MCP tool call and return a JSON-serializable result."""
-    if name == "estimate_credits":
-        est = await client.estimate(model=args["model"], **{k: v for k, v in args.items() if k != "model" and v is not None})
-        return {"credits": est.credits}
+    if name == "list_models":
+        return await client.list_models()
 
     if name == "text_to_video":
-        task = await client.text_to_video(
-            model=args["model"],
-            prompt=args["prompt"],
-            resolution=args.get("resolution", "720p"),
-            duration=args.get("duration", 5.0),
-        )
-        return {"task_id": task.task_id, "status": task.status}
+        payload = {"provider": args["provider"], "prompt": args["prompt"]}
+        for k in ("videoCapability", "ratio", "resolution", "duration", "generateAudio"):
+            if args.get(k) is not None:
+                payload[k] = args[k]
+        return await client.advanced_generate(**payload)
 
     if name == "image_to_video":
-        task = await client.image_to_video(
-            model=args["model"],
-            image_url=args["image_url"],
-            prompt=args.get("prompt"),
-        )
-        return {"task_id": task.task_id, "status": task.status}
+        payload = {"provider": args["provider"]}
+        if args.get("prompt"):
+            payload["prompt"] = args["prompt"]
+        for k in ("referenceImages", "referenceVideos", "ratio", "resolution", "duration"):
+            if args.get(k) is not None:
+                payload[k] = args[k]
+        return await client.advanced_generate(**payload)
 
     if name == "get_task":
-        task = await client.get_task(args["task_id"])
-        return {
-            "task_id": task.task_id,
-            "status": task.status,
-            "model": task.model,
-            "result_url": task.result_url,
-            "error": task.error,
-        }
+        return await client.get_generation_record(args["task_id"])
 
     if name == "wait_for_video":
-        if args["mode"] == "text-to-video":
-            task = await client.text_to_video(args["model"], args.get("prompt", ""), **{k: v for k, v in args.items() if k in ("resolution", "duration") and v is not None})
-        else:
-            task = await client.image_to_video(args["model"], args.get("image_url", ""), args.get("prompt"))
-        task = await client.wait_for(task.task_id, timeout=args.get("timeout", 300.0))
-        return {"task_id": task.task_id, "status": task.status, "result_url": task.result_url, "error": task.error}
+        payload = {"provider": args["provider"], "prompt": args["prompt"]}
+        for k in ("referenceImages", "ratio", "resolution", "duration"):
+            if args.get(k) is not None:
+                payload[k] = args[k]
+        resp = await client.advanced_generate(**payload)
+        task_id = resp.get("taskId") or resp.get("id") or resp.get("task_id")
+        if not task_id:
+            return {"error": "no task id in create response", "response": resp}
+        rec = await client.wait_for(task_id, timeout=args.get("timeout", 600.0))
+        return rec
+
+    if name == "create_image":
+        payload = {"model": args["model"], "prompt": args["prompt"]}
+        for k in ("size", "n"):
+            if args.get(k) is not None:
+                payload[k] = args[k]
+        return await client.create_image(payload)
 
     raise ValueError(f"unknown tool: {name}")
 
 
-async def _stream_json(obj: dict):
-    """Yield one JSON-RPC message line (for stdio transport)."""
-    yield json.dumps(obj) + "\n"
-
-
 async def serve_stdio():
-    """Minimal stdio MCP server loop (JSON-RPC 2.0).
-
-    Reads initialize/tools/list/tools/call requests from stdin and writes
-    responses to stdout. This is the transport Claude Desktop and most MCP
-    clients use.
-    """
+    """Minimal stdio MCP server loop (JSON-RPC 2.0)."""
     import sys
 
     client = make_client()
-    pending_result = None
 
     for line in sys.stdin:
         line = line.strip()
@@ -187,7 +196,7 @@ async def serve_stdio():
                 "result": {
                     "protocolVersion": "2024-11-05",
                     "capabilities": {"tools": {}},
-                    "serverInfo": {"name": "vipeak-mcp", "version": "0.1.0"},
+                    "serverInfo": {"name": "vipeak-mcp", "version": "0.2.0"},
                 },
             }
             print(json.dumps(resp), flush=True)
