@@ -3,7 +3,7 @@
   "name": "io.github.wideeyededi/vipeak",
   "title": "Vipeak AI",
   "description": "Generate 18+ AI videos and images via Seedance NSFW and Wan NSFW models.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "repository": {
     "url": "https://github.com/wideeyededi/vipeak-api",
     "source": "github"
@@ -12,7 +12,7 @@
     {
       "registryType": "pypi",
       "identifier": "vipeak-api",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "transport": {
         "type": "stdio"
       },
