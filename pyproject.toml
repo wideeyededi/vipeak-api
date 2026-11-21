@@ -1,1 +1,44 @@
-W2J1aWxkLXN5c3RlbV0KcmVxdWlyZXMgPSBbInNldHVwdG9vbHM+PTYxLjAiLCAid2hlZWwiXQpidWlsZC1iYWNrZW5kID0gInNldHVwdG9vbHMuYnVpbGRfbWV0YSIKCltwcm9qZWN0XQpuYW1lID0gInZpcGVhay1hcGkiCnZlcnNpb24gPSAiMC4xLjAiCmRlc2NyaXB0aW9uID0gIkFzeW5jIGNsaWVudCBmb3IgdGhlIFZpcGVhayBBSSAoMTIzdmlwcy5jb20pIFNlZWRhbmNlIFNwaWN5ICYgV2FuIE5TRlcgdmlkZW8gZ2VuZXJhdGlvbiBBUEkiCnJlYWRtZSA9ICJSRUFETUUubWQiCnJlcXVpcmVzLXB5dGhvbiA9ICI+PTMuOCIKbGljZW5zZSA9IHsgdGV4dCA9ICJNSVQiIH0KYXV0aG9ycyA9IFt7IG5hbWUgPSAiVmlwZWFrIEFJIiwgZW1haWwgPSAienp4Y3BsQHNpbmEuY29tIiB9XQprZXl3b3JkcyA9IFsKICAgICJzZWVkYW5jZSIsICJzZWVkYW5jZS1zcGljeSIsICJ3YW4iLCAid2FuLW5zZnciLCAibnNmdy1hcGkiLAogICAgImFpLXZpZGVvIiwgInRleHQtdG8tdmlkZW8iLCAiaW1hZ2UtdG8tdmlkZW8iLCAiYWktdmlkZW8tYXBpIiwKICAgICJ1bmNlbnNvcmVkLWFpIiwgImFkdWx0LWFpLXZpZGVvIiwgImFpLWNvbXBhbmlvbiIsICIxMjN2aXBzIiwKXQpjbGFzc2lmaWVycyA9IFsKICAgICJEZXZlbG9wbWVudCBTdGF0dXMgOjogMyAtIEFscGhhIiwKICAgICJJbnRlbmRlZCBBdWRpZW5jZSA6OiBEZXZlbG9wZXJzIiwKICAgICJMaWNlbnNlIDo6IE9TSSBBcHByb3ZlZCA6OiBNSVQgTGljZW5zZSIsCiAgICAiUHJvZ3JhbW1pbmcgTGFuZ3VhZ2UgOjogUHl0aG9uIDo6IDMiLAogICAgIlByb2dyYW1taW5nIExhbmd1YWdlIDo6IFB5dGhvbiA6OiAzLjgiLAogICAgIlByb2dyYW1taW5nIExhbmd1YWdlIDo6IFB5dGhvbiA6OiAzLjkiLAogICAgIlByb2dyYW1taW5nIExhbmd1YWdlIDo6IFB5dGhvbiA6OiAzLjEwIiwKICAgICJQcm9ncmFtbWluZyBMYW5ndWFnZSA6OiBQeXRob24gOjogMy4xMSIsCiAgICAiUHJvZ3JhbW1pbmcgTGFuZ3VhZ2UgOjogUHl0aG9uIDo6IDMuMTIiLAogICAgIlRvcGljIDo6IE11bHRpbWVkaWEgOjogVmlkZW8iLAogICAgIlRvcGljIDo6IFNvZnR3YXJlIERldmVsb3BtZW50IDo6IExpYnJhcmllcyIsCl0KZGVwZW5kZW5jaWVzID0gWyJodHRweD49MC4yNCJdCgpbcHJvamVjdC51cmxzXQpIb21lcGFnZSA9ICJodHRwczovLzEyM3ZpcHMuY29tLyIKRG9jdW1lbnRhdGlvbiA9ICJodHRwczovL2dpdGh1Yi5jb20vd2lkZWV5ZWRlZGkvdW5jZW5zb3JlZC1uc2Z3LWFpLXZpZGVvLWFwaSIKUmVwb3NpdG9yeSA9ICJodHRwczovL2dpdGh1Yi5jb20vd2lkZWV5ZWRlZGkvdmlwZWFrLWFwaSIKClt0b29sLnNldHVwdG9vbHNdCnBhY2thZ2VzID0gWyJ2aXBlYWtfYXBpIl0K
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vipeak-api"
+version = "0.1.0"
+description = "Async client for the Vipeak AI (123vips.com) Seedance Spicy & Wan NSFW video generation API"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Vipeak AI", email = "zzxcpl@sina.com" }]
+keywords = [
+    "seedance", "seedance-spicy", "wan", "wan-nsfw", "nsfw-api",
+    "ai-video", "text-to-video", "image-to-video", "ai-video-api",
+    "uncensored-ai", "adult-ai-video", "ai-companion", "123vips",
+    "mcp", "mcp-server", "model-context-protocol", "claude", "cursor",
+    "ai-agent", "codex",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = ["httpx>=0.24"]
+
+[project.urls]
+Homepage = "https://123vips.com/"
+Documentation = "https://github.com/wideeyededi/uncensored-nsfw-ai-video-api"
+Repository = "https://github.com/wideeyededi/vipeak-api"
+
+[project.scripts]
+vipeak-mcp = "vipeak_mcp:main"
+
+[tool.setuptools]
+packages = ["vipeak_api", "vipeak_mcp"]
