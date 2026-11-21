@@ -1,0 +1,35 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.wideeyededi/vipeak",
+  "title": "Vipeak AI",
+  "description": "Generate 18+ AI videos and images via Seedance NSFW and Wan NSFW models.",
+  "version": "0.2.0",
+  "repository": {
+    "url": "https://github.com/wideeyededi/vipeak-api",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "vipeak-api",
+      "version": "0.2.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "VIPEAK_API_KEY",
+          "description": "Vipeak AI API token (from the API Access package).",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "VIPEAK_BASE_URL",
+          "description": "API base URL. Defaults to https://123vip.fans.",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}
