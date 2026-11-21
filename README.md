@@ -1,5 +1,7 @@
 # vipeak-api
 
+mcp-name: io.github.wideeyededi/vipeak
+
 Async Python client for the **Vipeak AI** video generation API (123vip.fans / 123vips.com) — Seedance Spicy, Wan NSFW, and Vega model lines. 18+ text-to-video and image-to-video with async tasks, generation-record polling, and credit billing (1 USD = 100 credits).
 
 > Official docs: https://123vip.fans/docs/api.md · Documentation repo: [`wideeyededi/uncensored-nsfw-ai-video-api`](https://github.com/wideeyededi/uncensored-nsfw-ai-video-api)
