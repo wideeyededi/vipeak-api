@@ -39,6 +39,21 @@ task = await c.image_to_video(model="wan-nsfw", image_url="https://...", prompt=
 Webhooks: register a callback URL in API Access and parse the push body with
 `client.parse_webhook(payload)` instead of polling.
 
+## MCP server
+
+The package also ships an MCP server so AI agents (Claude, Cursor, Codex) can
+generate video directly:
+
+```bash
+# set VIPEAK_BASE_URL and VIPEAK_API_KEY, then run:
+python -m vipeak_mcp
+# or, after install:
+vipeak-mcp
+```
+
+Tools: `estimate_credits`, `text_to_video`, `image_to_video`, `get_task`,
+`wait_for_video`. See `MCP_配置说明.md` for Claude Desktop config.
+
 ## License
 
 MIT
